@@ -11,5 +11,14 @@ export const structure: StructureResolver = (S) =>
           S.document().schemaType('heroIntro').documentId('heroIntro').title('Hero / Intro 🗨️'),
         ),
 
-      ...S.documentTypeListItems().filter((listItem) => listItem.getId() !== 'heroIntro'),
+      S.listItem()
+        .title('Live section ♫')
+        .id('liveSection')
+        .child(
+          S.document().schemaType('liveSection').documentId('liveSection').title('Live section ♫'),
+        ),
+
+      ...S.documentTypeListItems().filter(
+        (listItem) => listItem.getId() !== 'heroIntro' && listItem.getId() !== 'liveSection',
+      ),
     ])
