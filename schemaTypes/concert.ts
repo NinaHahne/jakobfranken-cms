@@ -2,7 +2,7 @@ import {defineField, defineType} from 'sanity'
 
 export const concertType = defineType({
   name: 'concert',
-  title: 'Concert',
+  title: 'Concert ♫',
   type: 'document',
   fields: [
     defineField({
@@ -45,6 +45,7 @@ export const concertType = defineType({
       return {
         title,
         subtitle: [subtitle, date].filter(Boolean).join(' · '),
+        media: '♫',
       }
     },
   },
