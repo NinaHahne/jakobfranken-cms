@@ -26,7 +26,10 @@ export default defineConfig({
     newDocumentOptions: (prev, {creationContext}) => {
       if (creationContext.type === 'global') {
         return prev.filter(
-          (item) => item.templateId !== 'heroIntro' && item.templateId !== 'liveSection',
+          (item) =>
+            item.templateId !== 'heroIntro' &&
+            item.templateId !== 'heroIntro' &&
+            item.templateId !== 'liveSection',
         )
       }
       return prev

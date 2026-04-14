@@ -5,6 +5,12 @@ export const structure: StructureResolver = (S) =>
     .title('Content')
     .items([
       S.listItem()
+        .title('Navigation texts 🧭')
+        .id('siteTexts')
+        .child(
+          S.document().schemaType('siteTexts').documentId('siteTexts').title('Navigation texts 🧭'),
+        ),
+      S.listItem()
         .title('Hero / Intro 🗨️')
         .id('heroIntro')
         .child(
@@ -19,6 +25,9 @@ export const structure: StructureResolver = (S) =>
         ),
 
       ...S.documentTypeListItems().filter(
-        (listItem) => listItem.getId() !== 'heroIntro' && listItem.getId() !== 'liveSection',
+        (listItem) =>
+          listItem.getId() !== 'siteTexts' &&
+          listItem.getId() !== 'heroIntro' &&
+          listItem.getId() !== 'liveSection',
       ),
     ])
