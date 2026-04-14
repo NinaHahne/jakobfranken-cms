@@ -10,6 +10,7 @@ export const structure: StructureResolver = (S) =>
         .child(
           S.document().schemaType('siteTexts').documentId('siteTexts').title('Navigation texts 🧭'),
         ),
+
       S.listItem()
         .title('Hero / Intro 🗨️')
         .id('heroIntro')
@@ -24,10 +25,16 @@ export const structure: StructureResolver = (S) =>
           S.document().schemaType('liveSection').documentId('liveSection').title('Live section ♫'),
         ),
 
+      S.listItem()
+        .title('Imprint 📃')
+        .id('imprint')
+        .child(S.document().schemaType('imprint').documentId('imprint').title('Imprint 📃')),
+
       ...S.documentTypeListItems().filter(
         (listItem) =>
           listItem.getId() !== 'siteTexts' &&
           listItem.getId() !== 'heroIntro' &&
-          listItem.getId() !== 'liveSection',
+          listItem.getId() !== 'liveSection' &&
+          listItem.getId() !== 'imprint',
       ),
     ])

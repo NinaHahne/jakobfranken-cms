@@ -27,9 +27,10 @@ export default defineConfig({
       if (creationContext.type === 'global') {
         return prev.filter(
           (item) =>
+            item.templateId !== 'siteTexts' &&
             item.templateId !== 'heroIntro' &&
-            item.templateId !== 'heroIntro' &&
-            item.templateId !== 'liveSection',
+            item.templateId !== 'liveSection' &&
+            item.templateId !== 'imprint',
         )
       }
       return prev
